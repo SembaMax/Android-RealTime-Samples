@@ -36,10 +36,10 @@ class MQTTClient(mContext: Context) {
 
         override fun messageArrived(topic: String?, message: MqttMessage?) {
             if (message?.payload != null) {
-                val msg = String(message?.payload!!)
-                Log.e(MQTT_TAG, "Incoming message: " + msg)
+                val msg = String(message.payload!!)
+                Log.e(MQTT_TAG, "Incoming message: $message")
             } else {
-                Log.e(MQTT_TAG, "Incoming message: " + message?.payload)
+                Log.e(MQTT_TAG, "Incoming message: ${message?.payload}")
             }
         }
 
